@@ -1,0 +1,5 @@
+-V- i zrobić drugi poziom decoratora
+
+-- kod kliencki zrobić jako klasę - przyjmuje interfejs i woła sobie ->getTemp() zawsze tak samo
+
+-- rozkminić co zmienia dodanie klasy bazowej Decoratorów
