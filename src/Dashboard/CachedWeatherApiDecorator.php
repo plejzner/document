@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace Dashboard;
 
-class CachedWeatherApiClient implements WeatherApiClientInterface
+class CachedWeatherApiDecorator extends BaseWeatherApiDecorator
 {
-    private WeatherApiClientInterface $weatherApiClient;
     private Cache $cache;
 
     public function __construct(WeatherApiClientInterface $weatherApiClient)
     {
-        $this->weatherApiClient = $weatherApiClient;
+        parent::__construct($weatherApiClient);
         $this->cache = new Cache();
     }
 
@@ -21,7 +20,7 @@ class CachedWeatherApiClient implements WeatherApiClientInterface
             return $this->cache->get('temperature');
         }
 
-        $temp = $this->weatherApiClient->getTemperature();
+        $temp = parent::getTemperature();
         $this->cache->update('temperature', $temp, 15);
         return $temp;
     }

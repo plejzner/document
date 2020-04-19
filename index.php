@@ -5,12 +5,12 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Application\Application;
-use Dashboard\AmericanWeatherApiClient;
-use Dashboard\CachedWeatherApiClient;
+use Dashboard\AmericanWeatherApiDecorator;
+use Dashboard\CachedWeatherApiDecorator;
 use Dashboard\WeatherApiClient;
 
-$cachedClient = new CachedWeatherApiClient(
-                    new AmericanWeatherApiClient(
+$cachedClient = new CachedWeatherApiDecorator(
+                    new AmericanWeatherApiDecorator(
                         new WeatherApiClient()
                     )
                 );

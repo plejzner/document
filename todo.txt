@@ -1,5 +1,11 @@
 -V- i zrobić drugi poziom decoratora
 
--- kod kliencki zrobić jako klasę - przyjmuje interfejs i woła sobie ->getTemp() zawsze tak samo
+-V- kod kliencki zrobić jako klasę - przyjmuje interfejs i woła sobie ->getTemp() zawsze tak samo
 
--- rozkminić co zmienia dodanie klasy bazowej Decoratorów
+-V- rozkminić co zmienia dodanie klasy bazowej Decoratorów
+
+    .. DRY - konstruktor i field declaration wtedy nie trzeba powtarzać w każdym decoratorze
+
+        .. w cached niestety musi być konstruktor bo inicjalizuje field Cache
+
+            .. ale American sie wyraźnie uprościł
