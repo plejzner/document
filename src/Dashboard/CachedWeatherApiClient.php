@@ -9,10 +9,10 @@ class CachedWeatherApiClient implements WeatherApiClientInterface
     private WeatherApiClientInterface $weatherApiClient;
     private Cache $cache;
 
-    public function __construct(WeatherApiClientInterface $weatherApiClient, Cache $cache)
+    public function __construct(WeatherApiClientInterface $weatherApiClient)
     {
         $this->weatherApiClient = $weatherApiClient;
-        $this->cache = $cache;
+        $this->cache = new Cache();
     }
 
     public function getTemperature(): float
