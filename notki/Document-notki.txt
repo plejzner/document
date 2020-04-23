@@ -1,0 +1,8 @@
+-V- pierwsza wersja jako Factory Method
+
+-- a później dodać kilka elementów oprócz paragrafów (heading, może header i footer, link?)
+
+    .. i wtedy może ewoluuje to naturalnie do Abstract Factory
+
+-- inna kwestia, to możliwość dodawania elementów like bold text w paragrafie - tu chyba Composite
+    mógłby się wpasować
