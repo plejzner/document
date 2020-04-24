@@ -6,12 +6,12 @@ namespace Document;
 
 class PlainTextDocumentGenerator extends DocumentGenerator
 {
-    protected function createParagraph(string $text): ParagraphGenerator
+    protected function createParagraphGen(string $text): ParagraphGenerator
     {
         return new PlainTextParagraphGenerator($text);
     }
 
-    protected function createHeader(string $text, int $level): HeaderGenerator
+    protected function createHeaderGen(string $text, int $level): HeaderGenerator
     {
         return new PlainTextHeaderGenerator($text, $level);
     }
