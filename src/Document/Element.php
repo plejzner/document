@@ -2,7 +2,7 @@
 
 namespace Document;
 
-interface ParagraphInterface
+interface Element
 {
     public function generate(): string;
 }

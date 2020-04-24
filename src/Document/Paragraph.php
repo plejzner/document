@@ -3,7 +3,7 @@
 namespace Document;
 
 // abstract Product
-abstract class Paragraph implements ParagraphInterface
+abstract class Paragraph implements Element
 {
     protected string $text;
 

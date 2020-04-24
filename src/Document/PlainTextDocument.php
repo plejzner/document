@@ -11,6 +11,11 @@ class PlainTextDocument extends Document
         return new PlainTextParagraph($text);
     }
 
+    protected function createHeader(string $text, int $level): Header
+    {
+        return new PlainTextHeader($text, $level);
+    }
+
     protected function getFileExtension(): string
     {
         return '.txt';

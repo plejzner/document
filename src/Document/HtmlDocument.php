@@ -13,6 +13,13 @@ class HtmlDocument extends Document
         return new HtmlParagraph($text);
     }
 
+    // concrete factory method
+    protected function createHeader(string $text, int $level): Header
+    {
+        return new HtmlHeader($text, $level);
+    }
+
+    // concrete almost factory method ;)
     protected function getFileExtension(): string
     {
         return '.html';
