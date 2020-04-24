@@ -6,12 +6,10 @@ namespace Document;
 
 abstract class HeaderGenerator implements ElementGenerator
 {
-    protected string $text;
-    protected int $level;
+    protected Header $header;
 
-    public function __construct(string $text, int $level)
+    public function __construct(Header $header)
     {
-        $this->text = $text;
-        $this->level = $level;
+        $this->header = $header;
     }
 }

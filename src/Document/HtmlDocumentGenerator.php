@@ -4,22 +4,25 @@ declare(strict_types=1);
 
 namespace Document;
 
+use InvalidArgumentException;
+
 // concrete Creator
 class HtmlDocumentGenerator extends DocumentGenerator
 {
     // concrete factory method
-    protected function createParagraphGen(string $text): ParagraphGenerator
+    protected function createElementGenerator(Element $element): ElementGenerator
     {
-        return new HtmlParagraphGenerator($text);
+        if ($element instanceof Paragraph) {
+            return new HtmlParagraphGenerator($element);
+        }
+
+        if ($element instanceof Header) {
+            return new HtmlHeaderGenerator($element);
+        }
+
+        throw new InvalidArgumentException('unknown element');
     }
 
-    // concrete factory method
-    protected function createHeaderGen(string $text, int $level): HeaderGenerator
-    {
-        return new HtmlHeaderGenerator($text, $level);
-    }
-
-    // concrete almost factory method ;)
     protected function getFileExtension(): string
     {
         return '.html';

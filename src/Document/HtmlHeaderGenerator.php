@@ -8,9 +8,9 @@ class HtmlHeaderGenerator extends HeaderGenerator
 {
     public function generate(): string
     {
-        $tagOpen = '<h' . $this->level . '>';
-        $tagClose = '</h' . $this->level . '>';
+        $tagOpen = '<h' . $this->header->getLevel() . '>';
+        $tagClose = '</h' . $this->header->getLevel() . '>';
 
-        return $tagOpen . $this->text . $tagClose;
+        return $tagOpen . $this->header->getText() . $tagClose;
     }
 }

@@ -5,10 +5,10 @@ namespace Document;
 // abstract Product
 abstract class ParagraphGenerator implements ElementGenerator
 {
-    protected string $text;
+    protected Paragraph $paragraph;
 
-    public function __construct(string $text)
+    public function __construct(Paragraph $paragraph)
     {
-        $this->text = $text;
+        $this->paragraph = $paragraph;
     }
 }

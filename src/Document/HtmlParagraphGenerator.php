@@ -9,6 +9,6 @@ class HtmlParagraphGenerator extends ParagraphGenerator
 {
     public function generate(): string
     {
-        return '<p>' . $this->text . '</p>';
+        return '<p>' . $this->paragraph->getText() . '</p>';
     }
 }

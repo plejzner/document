@@ -15,22 +15,13 @@ abstract class DocumentGenerator
     public function __construct(Document $document)
     {
         foreach ($document->getElements() as $element) {
-            if ($element instanceof Paragraph) {
-                $this->elementGenerators[] = $this->createParagraphGen($element->getText());
-            }
-            if ($element instanceof Header) {
-                $this->elementGenerators[] = $this->createHeaderGen($element->getText(), $element->getLevel());
-            }
+            $this->elementGenerators[] = $this->createElementGenerator($element);
         }
     }
 
     // abstract factory method
-    abstract protected function createParagraphGen(string $text): ParagraphGenerator;
+    abstract protected function createElementGenerator(Element $element): ElementGenerator;
 
-    // abstract factory method
-    abstract protected function createHeaderGen(string $text, int $level): HeaderGenerator;
-
-    // abstract almost factory method? ;)
     abstract protected function getFileExtension(): string;
 
     // AbstractCreator logic operating on abstract Products

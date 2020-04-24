@@ -4,16 +4,22 @@ declare(strict_types=1);
 
 namespace Document;
 
+use InvalidArgumentException;
+
 class PlainTextDocumentGenerator extends DocumentGenerator
 {
-    protected function createParagraphGen(string $text): ParagraphGenerator
+    // concrete factory method
+    protected function createElementGenerator(Element $element): ElementGenerator
     {
-        return new PlainTextParagraphGenerator($text);
-    }
+        if ($element instanceof Paragraph) {
+            return new PlainTextParagraphGenerator($element);
+        }
 
-    protected function createHeaderGen(string $text, int $level): HeaderGenerator
-    {
-        return new PlainTextHeaderGenerator($text, $level);
+        if ($element instanceof Header) {
+            return new PlainTextHeaderGenerator($element);
+        }
+
+        throw new InvalidArgumentException('unknown element');
     }
 
     protected function getFileExtension(): string
