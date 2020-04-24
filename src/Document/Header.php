@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Document;
 
-class Header
+class Header implements Element
 {
     private string $text;
     private int $level;

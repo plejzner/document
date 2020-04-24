@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Document;
 
-class Paragraph
+class Paragraph implements Element
 {
     private string $text;
 

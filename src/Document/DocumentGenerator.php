@@ -7,6 +7,9 @@ namespace Document;
 // abstract Creator
 abstract class DocumentGenerator
 {
+    /**
+     * @var ElementGenerator[]
+     */
     private array $elements;
 
     public function __construct(Document $document)
@@ -40,7 +43,7 @@ abstract class DocumentGenerator
         $this->elements[] = $this->createHeader($text, $level);
     }
 
-    // abstract Creator logic operating on abstract Products
+    // AbstractCreator logic operating on abstract Products
     public function generate($name): void
     {
         $docBody = '';

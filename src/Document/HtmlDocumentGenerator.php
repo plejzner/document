@@ -7,6 +7,7 @@ namespace Document;
 // concrete Creator
 class HtmlDocumentGenerator extends DocumentGenerator
 {
+    // concrete factory method
     protected function createParagraph(string $text): ParagraphGenerator
     {
         return new HtmlParagraphGenerator($text);

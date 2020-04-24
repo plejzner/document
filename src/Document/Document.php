@@ -6,6 +6,9 @@ namespace Document;
 
 class Document
 {
+    /**
+     * @var Element[]
+     */
     private array $elements;
 
     public function addParagraph(string $text): void
