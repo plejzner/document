@@ -3,7 +3,7 @@
 namespace Document;
 
 // abstract Product
-abstract class Paragraph
+abstract class Paragraph implements ParagraphInterface
 {
     protected string $text;
 
@@ -11,6 +11,4 @@ abstract class Paragraph
     {
         $this->text = $text;
     }
-
-    abstract public function generate(): string;
 }
