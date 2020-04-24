@@ -1,14 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Document;
 
-// abstract Product
-abstract class Paragraph implements Element
+class Paragraph
 {
-    protected string $text;
+    private string $text;
 
     public function __construct(string $text)
     {
         $this->text = $text;
+    }
+
+    public function getText(): string
+    {
+        return $this->text;
     }
 }

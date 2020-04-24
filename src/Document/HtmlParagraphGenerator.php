@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Document;
 
 // concrete Product
-class HtmlParagraph extends Paragraph
+class HtmlParagraphGenerator extends ParagraphGenerator
 {
     public function generate(): string
     {

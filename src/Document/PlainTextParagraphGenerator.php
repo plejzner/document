@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Document;
 
-class PlainTextParagraph extends Paragraph
+class PlainTextParagraphGenerator extends ParagraphGenerator
 {
     public function generate(): string
     {

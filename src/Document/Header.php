@@ -4,14 +4,24 @@ declare(strict_types=1);
 
 namespace Document;
 
-abstract class Header implements Element
+class Header
 {
-    protected string $text;
-    protected int $level;
+    private string $text;
+    private int $level;
 
     public function __construct(string $text, int $level)
     {
         $this->text = $text;
         $this->level = $level;
+    }
+
+    public function getText(): string
+    {
+        return $this->text;
+    }
+
+    public function getLevel(): int
+    {
+        return $this->level;
     }
 }

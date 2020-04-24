@@ -2,7 +2,7 @@
 
 namespace Document;
 
-interface Element
+interface ElementGenerator
 {
     public function generate(): string;
 }

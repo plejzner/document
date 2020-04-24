@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Document;
 
-class HtmlHeader extends Header
+class HtmlHeaderGenerator extends HeaderGenerator
 {
     public function generate(): string
     {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Document;
 
-class PlainTextHeader extends Header
+class PlainTextHeaderGenerator extends HeaderGenerator
 {
     public function generate(): string
     {
