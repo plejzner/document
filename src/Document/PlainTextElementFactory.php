@@ -6,10 +6,9 @@ namespace Document;
 
 use InvalidArgumentException;
 
-class PlainTextFormatGenerator extends DocumentFormatGenerator
+class PlainTextElementFactory implements ElementGeneratorFactory
 {
-    // concrete factory method
-    protected function createElementGenerator(Element $element): ElementGenerator
+    public function createElementGenerator(Element $element): ElementGenerator
     {
         if ($element instanceof Paragraph) {
             return new PlainTextParagraphGenerator($element);
@@ -20,10 +19,5 @@ class PlainTextFormatGenerator extends DocumentFormatGenerator
         }
 
         throw new InvalidArgumentException('unknown element');
-    }
-
-    protected function getFileExtension(): string
-    {
-        return '.txt';
     }
 }

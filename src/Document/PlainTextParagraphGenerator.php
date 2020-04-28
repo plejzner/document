@@ -8,6 +8,6 @@ class PlainTextParagraphGenerator extends ParagraphGenerator
 {
     public function generate(): string
     {
-        return $this->paragraph->getText() . "\n\n";
+        return "\t" . $this->paragraph->getText() . "\n\n";
     }
 }

@@ -6,11 +6,9 @@ namespace Document;
 
 use InvalidArgumentException;
 
-// concrete Creator
-class HtmlFormatGenerator extends DocumentFormatGenerator
+class HtmlElementFactory implements ElementGeneratorFactory
 {
-    // concrete factory method
-    protected function createElementGenerator(Element $element): ElementGenerator
+    public function createElementGenerator(Element $element): ElementGenerator
     {
         if ($element instanceof Paragraph) {
             return new HtmlParagraphGenerator($element);
@@ -21,10 +19,5 @@ class HtmlFormatGenerator extends DocumentFormatGenerator
         }
 
         throw new InvalidArgumentException('unknown element');
-    }
-
-    protected function getFileExtension(): string
-    {
-        return '.html';
     }
 }

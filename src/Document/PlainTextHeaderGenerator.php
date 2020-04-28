@@ -12,6 +12,6 @@ class PlainTextHeaderGenerator extends HeaderGenerator
             return "------------\n" . $this->header->getText() . "\n------------\n\n";
         }
 
-        return '--- ' . $this->header->getText() . " ---\n\n";
+        return $this->header->getText() . "\n---------------------\n\n";
     }
 }

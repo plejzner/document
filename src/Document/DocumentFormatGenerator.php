@@ -4,35 +4,24 @@ declare(strict_types=1);
 
 namespace Document;
 
-// abstract Creator
-abstract class DocumentFormatGenerator
+class DocumentFormatGenerator
 {
-    /**
-     * @var ElementGenerator[]
-     */
-    private array $elementGenerators;
+    private ElementGeneratorFactory $abstractFactory;
 
-    public function __construct(Document $document)
+    public function __construct(ElementGeneratorFactory $abstractFactory)
     {
-        foreach ($document->getElements() as $element) {
-            $this->elementGenerators[] = $this->createElementGenerator($element);
-        }
+        $this->abstractFactory = $abstractFactory;
     }
 
-    // abstract factory method
-    abstract protected function createElementGenerator(Element $element): ElementGenerator;
-
-    abstract protected function getFileExtension(): string;
-
-    // AbstractCreator logic operating on abstract Products
-    public function generate($name): void
+    // logic operating on abstract Products
+    public function generate(Document $document, $fileName): void
     {
         $docBody = '';
-        foreach ($this->elementGenerators as $elementGenerator) {
+        foreach ($document->getElements() as $element) {
+            $elementGenerator = $this->abstractFactory->createElementGenerator($element);
             $docBody .= $elementGenerator->generate();
         }
 
-        $filename = $name . $this->getFileExtension();
-        file_put_contents($filename, $docBody);
+        file_put_contents($fileName, $docBody);
     }
 }
