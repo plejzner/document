@@ -5,8 +5,8 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 use Document\Document;
-use Document\HtmlDocumentGenerator;
-use Document\PlainTextDocumentGenerator;
+use Document\HtmlFormatGenerator;
+use Document\PlainTextFormatGenerator;
 
 $doc = new Document();
 $doc->addHeader('Great Header', 1)
@@ -14,8 +14,8 @@ $doc->addHeader('Great Header', 1)
     ->addHeader('Less important header', 2)
     ->addParagraph('And the second paragraph is here. Brand new and shiny.');
 
-$htmlDocGen = new HtmlDocumentGenerator($doc);
+$htmlDocGen = new HtmlFormatGenerator($doc);
 $htmlDocGen->generate('new-document');
 
-$txtDocGen = new PlainTextDocumentGenerator($doc);
+$txtDocGen = new PlainTextFormatGenerator($doc);
 $txtDocGen->generate('new-document');

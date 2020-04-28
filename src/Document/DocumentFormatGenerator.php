@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Document;
 
 // abstract Creator
-abstract class DocumentGenerator
+abstract class DocumentFormatGenerator
 {
     /**
      * @var ElementGenerator[]
