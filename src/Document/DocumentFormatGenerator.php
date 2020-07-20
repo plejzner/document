@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Document;
 
-class DocumentFormatGenerator
+abstract class DocumentFormatGenerator
 {
     private ElementGeneratorFactory $abstractFactory;
 
@@ -14,7 +14,7 @@ class DocumentFormatGenerator
     }
 
     // logic operating on abstract Products
-    public function generate(Document $document, $fileName): void
+    public function generate(Document $document): string
     {
         $docBody = '';
         foreach ($document->getElements() as $element) {
@@ -22,6 +22,8 @@ class DocumentFormatGenerator
             $docBody .= $elementGenerator->generate();
         }
 
-        file_put_contents($fileName, $docBody);
+        return $docBody;
     }
+
+    abstract public function getFormatFileExtension(): string;
 }

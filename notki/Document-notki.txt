@@ -3,3 +3,12 @@
 -- inna kwestia, to możliwość dodawania elementów like bold text w paragrafie - Composite?
 
 -- dlaczego mógłbym potrzebować wielu factory-metod (w obu wzorcach)?
+
+
+
+btw w tej wersji nadal mogą istnieć podklasy HtmlFormatGenerator i PlainTextFormatGenerator
+tylko, że nie będą będą odpowiadały za kreowanie ElementGeneratorów
+    .. ale np HtmlFormatGenerator może mieć logikę opakowywania całości w <html><body></></>
+    .. mogą też zwracać file extension ...yyy czy nie?
+i wtedy elegancko będzie widać jak Abstract Factory w porównaniu do Template Method daje
+rozdzielenie odpowiedzialności i bardziej SRP ko
