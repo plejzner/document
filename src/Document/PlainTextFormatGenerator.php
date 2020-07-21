@@ -6,7 +6,7 @@ namespace Document;
 
 class PlainTextFormatGenerator extends DocumentFormatGenerator
 {
-    public const FILE_EXTENSION = 'txt';
+    private const FILE_EXTENSION = 'txt';
 
     public function __construct()
     {

@@ -6,7 +6,7 @@ namespace Document;
 
 class HtmlFormatGenerator extends DocumentFormatGenerator
 {
-    public const FILE_EXTENSION = 'html';
+    private const FILE_EXTENSION = 'html';
 
     public function __construct()
     {
