@@ -9,7 +9,6 @@ use Document\DocumentFormatGenerator;
 use Document\FileWriter;
 use Document\HtmlFormatGenerator;
 use Document\PlainTextFormatGenerator;
-use InvalidArgumentException;
 
 class DocumentsApplication
 {
@@ -20,26 +19,21 @@ class DocumentsApplication
         $this->fileWriter = new FileWriter();
     }
 
-    public function exportDocument(Document $document, string $name, string $format): void
+    public function exportDocAsText(Document $document, string $name): void
     {
-        $generator = $this->createGenerator($format);
+        $this->exportDocument($document, $name, new PlainTextFormatGenerator());
+    }
 
+    public function exportDocAsHtml(Document $document, string $name): void
+    {
+        $this->exportDocument($document, $name, new HtmlFormatGenerator());
+    }
+
+    private function exportDocument(Document $document, string $name, DocumentFormatGenerator $generator): void
+    {
         $this->fileWriter->write(
             $generator->generate($document),
             $name . '.' . $generator->getFormatFileExtension()
         );
-    }
-
-    private function createGenerator(string $format): DocumentFormatGenerator
-    {
-        if ($format === PlainTextFormatGenerator::FILE_EXTENSION) {
-            return new PlainTextFormatGenerator();
-        }
-
-        if ($format === HtmlFormatGenerator::FILE_EXTENSION) {
-            return new HtmlFormatGenerator();
-        }
-
-        throw new InvalidArgumentException('wrong format');
     }
 }

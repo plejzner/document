@@ -15,5 +15,5 @@ $doc->addHeader('Great Header', 1)
     ->addHeader('Less important header', 2)
     ->addParagraph('And the second paragraph is here. Lorem ipsum dolor.');
 
-$app->exportDocument($doc, 'my-document', 'txt');
-$app->exportDocument($doc, 'my-document', 'html');
+$app->exportDocAsText($doc, 'my-document');
+$app->exportDocAsHTML($doc, 'my-document');
