@@ -31,9 +31,9 @@ class DocumentsApplication
 
     private function exportDocument(Document $document, string $name, DocumentFormatGenerator $generator): void
     {
-        $this->fileWriter->write(
-            $generator->generate($document),
-            $name . '.' . $generator->getFormatFileExtension()
-        );
+        $filename = $name . '.' . $generator->getFormatFileExtension();
+        $path = ($this->fileWriter)($generator->generate($document), $filename);
+
+        echo 'exported: ' . $path . "\n";
     }
 }
