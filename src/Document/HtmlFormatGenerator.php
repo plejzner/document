@@ -4,13 +4,24 @@ declare(strict_types=1);
 
 namespace Document;
 
+use InvalidArgumentException;
+
 class HtmlFormatGenerator extends DocumentFormatGenerator
 {
     private const FILE_EXTENSION = 'html';
 
-    public function __construct()
+    // Factory Method
+    protected function createElementGenerator(Element $element): ElementGenerator
     {
-        parent::__construct(new HtmlElementFactory);
+        if ($element instanceof Paragraph) {
+            return new HtmlParagraphGenerator($element);
+        }
+
+        if ($element instanceof Header) {
+            return new HtmlHeaderGenerator($element);
+        }
+
+        throw new InvalidArgumentException('unknown element');
     }
 
     public function generate(Document $document): string

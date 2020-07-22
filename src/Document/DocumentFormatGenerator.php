@@ -6,19 +6,15 @@ namespace Document;
 
 abstract class DocumentFormatGenerator
 {
-    private ElementGeneratorFactory $abstractFactory;
-
-    public function __construct(ElementGeneratorFactory $abstractFactory)
-    {
-        $this->abstractFactory = $abstractFactory;
-    }
+    // Factory Method
+    abstract protected function createElementGenerator(Element $element): ElementGenerator;
 
     // logic operating on abstract Products
     public function generate(Document $document): string
     {
         $docBody = '';
         foreach ($document->getElements() as $element) {
-            $elementGenerator = $this->abstractFactory->createElementGenerator($element);
+            $elementGenerator = $this->createElementGenerator($element);
             $docBody .= $elementGenerator->generate();
         }
 
