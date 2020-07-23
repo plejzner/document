@@ -10,10 +10,10 @@ use Dashboard\CachedWeatherApiDecorator;
 use Dashboard\WeatherApiClient;
 
 $cachedClient = new CachedWeatherApiDecorator(
-                    new AmericanWeatherApiDecorator(
-                        new WeatherApiClient()
-                    )
-                );
+    new AmericanWeatherApiDecorator(
+        new WeatherApiClient()
+    )
+);
 
 $app = new Application($cachedClient);
 $app->showInfo();
