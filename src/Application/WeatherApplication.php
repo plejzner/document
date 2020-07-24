@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Application;
 
-use Dashboard\WeatherApiClientInterface;
+use Weather\WeatherApiClientInterface;
 
-class Application
+class WeatherApplication
 {
     private WeatherApiClientInterface $weatherApiClient;
 

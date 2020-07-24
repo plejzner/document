@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Dashboard;
+namespace Weather;
 
 class CachedWeatherApiDecorator extends BaseWeatherApiDecorator
 {

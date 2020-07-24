@@ -1,6 +1,6 @@
 <?php
 
-namespace Dashboard;
+namespace Weather;
 
 interface WeatherApiClientInterface
 {
