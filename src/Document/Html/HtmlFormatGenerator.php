@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Document;
+namespace Document\Html;
+
+use Document\Document;
+use Document\DocumentFormatGenerator;
 
 class HtmlFormatGenerator extends DocumentFormatGenerator
 {

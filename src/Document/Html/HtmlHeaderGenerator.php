@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Document;
+namespace Document\Html;
+
+use Document\HeaderGenerator;
 
 class HtmlHeaderGenerator extends HeaderGenerator
 {

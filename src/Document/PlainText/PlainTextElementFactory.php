@@ -2,8 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Document;
+namespace Document\PlainText;
 
+use Document\Element;
+use Document\ElementGenerator;
+use Document\ElementGeneratorFactory;
+use Document\Header;
+use Document\Paragraph;
 use InvalidArgumentException;
 
 class PlainTextElementFactory implements ElementGeneratorFactory
