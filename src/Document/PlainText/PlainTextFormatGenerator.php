@@ -5,7 +5,10 @@ declare(strict_types=1);
 namespace Document\PlainText;
 
 use Document\DocumentFormatGenerator;
-
+use Document\Element;
+use Document\ElementGenerator;
+use Document\Header;
+use Document\Paragraph;
 use InvalidArgumentException;
 
 class PlainTextFormatGenerator extends DocumentFormatGenerator

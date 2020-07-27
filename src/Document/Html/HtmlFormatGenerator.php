@@ -6,7 +6,10 @@ namespace Document\Html;
 
 use Document\Document;
 use Document\DocumentFormatGenerator;
-
+use Document\Element;
+use Document\ElementGenerator;
+use Document\Header;
+use Document\Paragraph;
 use InvalidArgumentException;
 
 class HtmlFormatGenerator extends DocumentFormatGenerator
