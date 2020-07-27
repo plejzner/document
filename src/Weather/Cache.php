@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Dashboard;
+namespace Weather;
 
+// Cache mock
 class Cache
 {
     public function has(string $key): bool
     {
-        return false;
-//        return $key === 'temperature';
+        return true;
     }
 
     public function get(string $key)
     {
-        return 30;
+        return new Temperature(22, 'C');
     }
 
     public function update(string $key, $value, $validPeriod)
     {
-
+        // update cache
     }
 }

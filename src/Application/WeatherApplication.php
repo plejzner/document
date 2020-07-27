@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Dashboard;
+namespace Application;
 
-abstract class BaseWeatherApiDecorator implements WeatherApiClientInterface
+use Weather\WeatherApiClientInterface;
+
+class WeatherApplication
 {
     private WeatherApiClientInterface $weatherApiClient;
 
@@ -13,8 +15,9 @@ abstract class BaseWeatherApiDecorator implements WeatherApiClientInterface
         $this->weatherApiClient = $weatherApiClient;
     }
 
-    public function getTemperature(): float
+    public function showInfo(): void
     {
-        return $this->weatherApiClient->getTemperature();
+        echo 'Hello, current temperature is: ' . $this->weatherApiClient->getTemperature();
+        echo "\n";
     }
 }

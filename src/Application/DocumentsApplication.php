@@ -7,8 +7,8 @@ namespace Application;
 use Document\Document;
 use Document\DocumentFormatGenerator;
 use Document\FileWriter;
-use Document\HtmlFormatGenerator;
-use Document\PlainTextFormatGenerator;
+use Document\Html\HtmlFormatGenerator;
+use Document\PlainText\PlainTextFormatGenerator;
 
 class DocumentsApplication
 {

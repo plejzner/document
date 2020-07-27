@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Document;
+namespace Document\PlainText;
+
+use Document\DocumentFormatGenerator;
 
 use InvalidArgumentException;
 
