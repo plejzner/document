@@ -9,11 +9,20 @@ use Weather\AmericanWeatherApiDecorator;
 use Weather\CachedWeatherApiDecorator;
 use Weather\WeatherApiClient;
 
+$pureApiClient = new WeatherApiClient();
+$app = new WeatherApplication($pureApiClient);
+$app->showInfo();
+
 $cachedClient = new CachedWeatherApiDecorator(
-    new AmericanWeatherApiDecorator(
+    new WeatherApiClient()
+);
+$app2 = new WeatherApplication($cachedClient);
+$app2->showInfo();
+
+$cachedAmericanClient = new AmericanWeatherApiDecorator(
+    new CachedWeatherApiDecorator(
         new WeatherApiClient()
     )
 );
-
-$app = new WeatherApplication($cachedClient);
-$app->showInfo();
+$app3 = new WeatherApplication($cachedAmericanClient);
+$app3->showInfo();

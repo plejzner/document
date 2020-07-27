@@ -13,7 +13,7 @@ abstract class BaseWeatherApiDecorator implements WeatherApiClientInterface
         $this->weatherApiClient = $weatherApiClient;
     }
 
-    public function getTemperature(): float
+    public function getTemperature(): Temperature
     {
         return $this->weatherApiClient->getTemperature();
     }

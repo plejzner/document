@@ -6,8 +6,8 @@ namespace Weather;
 
 class WeatherApiClient implements WeatherApiClientInterface
 {
-    public function getTemperature(): float
+    public function getTemperature(): Temperature
     {
-        return 20.5;
+        return new Temperature(20.5, 'C');
     }
 }

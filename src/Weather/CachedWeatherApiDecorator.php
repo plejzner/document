@@ -14,9 +14,10 @@ class CachedWeatherApiDecorator extends BaseWeatherApiDecorator
         $this->cache = new Cache();
     }
 
-    public function getTemperature(): float
+    public function getTemperature(): Temperature
     {
         if ($this->cache->has('temperature') === true) {
+            echo "cache hit\n";
             return $this->cache->get('temperature');
         }
 

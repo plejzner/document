@@ -4,5 +4,5 @@ namespace Weather;
 
 interface WeatherApiClientInterface
 {
-    public function getTemperature(): float;
+    public function getTemperature(): Temperature;
 }
