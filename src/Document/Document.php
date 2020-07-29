@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Document;
 
+/**
+ * Abstract document representation
+ */
 class Document
 {
     /**

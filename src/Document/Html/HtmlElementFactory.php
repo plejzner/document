@@ -11,6 +11,10 @@ use Document\Header;
 use Document\Paragraph;
 use InvalidArgumentException;
 
+/**
+ * Produces Html element generators.
+ * Concrete Factory in Abstract Factory pattern.
+ */
 class HtmlElementFactory implements ElementGeneratorFactory
 {
     public function createElementGenerator(Element $element): ElementGenerator

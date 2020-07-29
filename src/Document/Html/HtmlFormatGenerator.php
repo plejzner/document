@@ -7,6 +7,9 @@ namespace Document\Html;
 use Document\Document;
 use Document\DocumentFormatGenerator;
 
+/**
+ * Responsible for Html specific details in document body generation (wraps all doc body in tags).
+ */
 class HtmlFormatGenerator extends DocumentFormatGenerator
 {
     private const FILE_EXTENSION = 'html';

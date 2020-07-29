@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Document;
 
+/**
+ * Generates document body.
+ * Client in Abstract Factory pattern.
+ * Uses Abstract Factory to create ElementGenerators, and uses them through their interface.
+ */
 abstract class DocumentFormatGenerator
 {
     private ElementGeneratorFactory $abstractFactory;
