@@ -26,16 +26,6 @@ patterns: **Strategy** + **Decorator**
 
 Example use case: `public/index-encoder.php`
 
-#### src/Weather
-
-Weather Api client that can be wrapped using Decorator pattern for cashing or unit conversion.
-
-pattern: **Decorator**
-
-![Weather diagram](diagrams/Weather.png)
-
-Example use case: `public/index-weather.php`
-
 #### Environment
 
 You can use docker container with php 7.4 if you wish:
