@@ -19,21 +19,19 @@ class DocumentsApplication
         $this->fileWriter = new FileWriter();
     }
 
-    public function exportDocAsText(Document $document, string $name): void
+    public function exportDocAsText(Document $document, string $name): string
     {
-        $this->exportDocument($document, $name, new PlainTextFormatGenerator());
+        return $this->exportDocument($document, $name, new PlainTextFormatGenerator());
     }
 
-    public function exportDocAsHtml(Document $document, string $name): void
+    public function exportDocAsHtml(Document $document, string $name): string
     {
-        $this->exportDocument($document, $name, new HtmlFormatGenerator());
+        return $this->exportDocument($document, $name, new HtmlFormatGenerator());
     }
 
-    private function exportDocument(Document $document, string $name, DocumentFormatGenerator $generator): void
+    private function exportDocument(Document $document, string $name, DocumentFormatGenerator $generator): string
     {
         $filename = $name . '.' . $generator->getFormatFileExtension();
-        $path = ($this->fileWriter)($generator->generate($document), $filename);
-
-        echo 'exported: ' . $path . "\n";
+        return ($this->fileWriter)($generator->generate($document), $filename);
     }
 }
