@@ -14,17 +14,7 @@ This helps to separate general document generation logic from a format specific 
 
 ![Document diagram](diagrams/Document.png)
 
-Example use case: `public/index-document.php`
-
-####src/Encoder
-
-Encoder uses injected CipherStrategy to encode data. CipherStrategy can be provided as Decorator, wrapping any number of CipherStrategies one on top of the other.
-
-patterns: **Strategy** + **Decorator**
- 
-![Encoder diagram](diagrams/Encoder.png)
-
-Example use case: `public/index-encoder.php`
+Example use case: `public/index.php`
 
 #### Environment
 
@@ -32,7 +22,8 @@ You can use docker container with php 7.4 if you wish:
 
 `cd <<project directory>>`
 
-run project: `docker-compose run php-dev php public/index-document.php`
+install dependencies (phpunit), configure autoloading: `docker-compose run php-dev composer install`
 
-run tests: `docker-compose run php-dev php vendor/phpunit/phpunit.php` (jakoś tak TODO)
+run project: `docker-compose run php-dev php public/index.php`
 
+run tests: `docker-compose run php-dev php vendor/phpunit/phpunit/phpunit --color=always test/DocumentTest.php`
