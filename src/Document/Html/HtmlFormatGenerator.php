@@ -12,6 +12,12 @@ use Document\Header;
 use Document\Paragraph;
 use InvalidArgumentException;
 
+/**
+ * Responsible for Html specific details in document body generation (wraps all doc body in tags).
+ *
+ * In Factory Method version also responsible for producing ElementGenerators. This shows how Abstract Factory
+ * gives us better separation of concerns.
+ */
 class HtmlFormatGenerator extends DocumentFormatGenerator
 {
     private const FILE_EXTENSION = 'html';

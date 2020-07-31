@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Document;
 
+/**
+ * Generates document body.
+ *
+ * Uses Factory Method implemented by its children to create ElementGenerators, and uses them through their interface.
+ */
 abstract class DocumentFormatGenerator
 {
     // Factory Method
