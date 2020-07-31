@@ -27,3 +27,11 @@ install dependencies (phpunit), configure autoloading: `docker-compose run php-d
 run project: `docker-compose run php-dev php public/index.php`
 
 run tests: `docker-compose run php-dev php vendor/phpunit/phpunit/phpunit --color=always test/DocumentTest.php`
+
+#### Note about testing
+
+There is one high level test, that checks if exporting is working as expected. 
+
+It uses most external api, and therefore indirectly tests if all layers of application works properly, with a small amount of work. It also supports refactoring, because it doesn't have to be changed while implementation details changes. It works for both Abstract Factory and Factory Method (branch 'factory-method-version') versions.
+
+I think it is important to maintain proper balance between high level and isolated tests. Isolated are good for classes with complex logic, and many cases to check without engaging all application layers.    
