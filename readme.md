@@ -1,10 +1,10 @@
 ### Examples of design patterns in PHP 7.4
 
-#### src/Document
+#### Document
 
 Example system for creating abstract documents and exporting them in various formats.
 
-pattern: **Abstract Factory** (see branch factory-method-version for **Factory Method**)
+pattern: **Abstract Factory** (see branch 'factory-method-version' for **Factory Method**)
 
 pattern overview: 
 
