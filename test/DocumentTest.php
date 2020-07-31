@@ -15,14 +15,13 @@ class DocumentTest extends TestCase
 
     public function test_document_exports_correctly_in_text_and_html_formats()
     {
-        $app = new DocumentsApplication();
-
         $doc = new Document();
         $doc->addHeader('Great Header', 1)
             ->addParagraph('This is first test paragraph. Test test.')
             ->addHeader('Less important header', 2)
             ->addParagraph('And the second test paragraph is here. Test test.');
 
+        $app = new DocumentsApplication();
         $actualTextFilePath = $app->exportDocAsText($doc, 'test-document');
         $actualHtmlFilePath = $app->exportDocAsHTML($doc, 'test-document');
 
